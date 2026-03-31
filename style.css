@@ -13,8 +13,16 @@ body {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    transition: background-color 0.3s, color 0.3s;
 }
 
+/* Dark mode - applied to body */
+body.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+/* Header */
 header {
     background: #ffffffcc;
     backdrop-filter: blur(5px);
@@ -22,12 +30,32 @@ header {
     border-radius: 60px;
     margin-bottom: 2rem;
     box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    transition: background 0.3s;
 }
 
+body.dark-mode header {
+    background: #2a2a2acc;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Navigation */
 nav {
     display: flex;
     gap: 2rem;
-    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -44,11 +72,63 @@ nav a:hover {
     color: white;
 }
 
+body.dark-mode nav a {
+    color: #ccc;
+}
+
+body.dark-mode nav a:hover {
+    background: #444;
+    color: white;
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+    background: none;
+    border: 2px solid #2c5f8a;
+    border-radius: 40px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    background: white;
+}
+
+.theme-btn:hover {
+    background: #e0e0e0;
+}
+
+body.dark-mode .theme-btn {
+    background: #333;
+    border-color: #777;
+    color: #ffd966;
+}
+
+/* Greeting */
+.greeting {
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: rgba(44, 95, 138, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 40px;
+    color: #2c5f8a;
+}
+
+body.dark-mode .greeting {
+    background: #2a2a2a;
+    color: #8ab3cf;
+}
+
+/* Main Content */
 main {
     background: white;
     border-radius: 40px;
     padding: 2.5rem;
     box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    transition: background 0.3s;
+}
+
+body.dark-mode main {
+    background: #1e1e1e;
 }
 
 /* Profile Section */
@@ -74,6 +154,10 @@ h1 {
     color: #0b1a26;
 }
 
+body.dark-mode h1 {
+    color: #ffffff;
+}
+
 .subtitle {
     font-size: 1.3rem;
     color: #2c5f8a;
@@ -81,9 +165,99 @@ h1 {
     margin-bottom: 0.5rem;
 }
 
+body.dark-mode .subtitle {
+    color: #8ab3cf;
+}
+
 .gwa, .status {
     color: #4a5c6b;
     font-size: 1.1rem;
+}
+
+body.dark-mode .gwa,
+body.dark-mode .status {
+    color: #aaa;
+}
+
+/* Contact and Print Buttons */
+.contact-btn, .print-btn {
+    margin-top: 1rem;
+    background: #2c5f8a;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.print-btn {
+    background: #5a6e7c;
+    margin-left: 0.5rem;
+}
+
+.contact-btn:hover {
+    background: #1a3d5c;
+}
+
+.print-btn:hover {
+    background: #3a4a58;
+}
+
+body.dark-mode .contact-btn {
+    background: #3a6e9e;
+}
+
+body.dark-mode .print-btn {
+    background: #4a5a66;
+}
+
+/* Quote Section */
+.quote-section {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: #f0f4f9;
+    border-radius: 30px;
+}
+
+body.dark-mode .quote-section {
+    background: #2a2a2a;
+}
+
+.quote-box {
+    font-size: 1.1rem;
+    font-style: italic;
+    padding: 1rem;
+    border-left: 4px solid #2c5f8a;
+    border-right: 4px solid #2c5f8a;
+    display: inline-block;
+    max-width: 80%;
+    margin-bottom: 0.8rem;
+}
+
+body.dark-mode .quote-box {
+    border-left-color: #8ab3cf;
+    border-right-color: #8ab3cf;
+}
+
+.quote-btn {
+    background: #2c5f8a;
+    color: white;
+    border: none;
+    padding: 0.4rem 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.quote-btn:hover {
+    background: #1a3d5c;
+}
+
+body.dark-mode .quote-btn {
+    background: #3a6e9e;
 }
 
 /* Projects Section */
@@ -94,6 +268,50 @@ h1 {
     border-left: 8px solid #2c5f8a;
     padding-left: 1.5rem;
     color: #0b1a26;
+}
+
+body.dark-mode .projects h2,
+body.dark-mode .skills h2 {
+    color: #eee;
+    border-left-color: #8ab3cf;
+}
+
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 1.8rem;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.filter-btn {
+    background: #eef3f8;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.filter-btn.active {
+    background: #2c5f8a;
+    color: white;
+}
+
+body.dark-mode .filter-btn {
+    background: #3a3a3a;
+    color: #ccc;
+}
+
+body.dark-mode .filter-btn.active {
+    background: #3a6e9e;
+    color: white;
 }
 
 .project-grid {
@@ -116,6 +334,11 @@ h1 {
     box-shadow: 0 18px 30px -8px rgba(44,95,138,0.15);
 }
 
+body.dark-mode .project-card {
+    background: #2a2a2a;
+    border-color: #444;
+}
+
 .project-img {
     width: 100%;
     height: 140px;
@@ -126,15 +349,51 @@ h1 {
     border: 1px solid #cbd6e4;
 }
 
+body.dark-mode .project-img {
+    background: #3a3a3a;
+    border-color: #555;
+}
+
 .project-card h3 {
     font-size: 1.4rem;
     margin-bottom: 0.8rem;
     color: #1a3d5c;
 }
 
+body.dark-mode .project-card h3 {
+    color: #c9e1f2;
+}
+
 .project-card p {
     color: #2f4050;
     font-size: 0.95rem;
+}
+
+body.dark-mode .project-card p {
+    color: #ccc;
+}
+
+.project-actions {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.like-btn {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    transition: background 0.2s;
+}
+
+.like-btn:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+body.dark-mode .like-btn:hover {
+    background: rgba(255,255,255,0.1);
 }
 
 /* Skills */
@@ -154,6 +413,18 @@ h1 {
     font-weight: 500;
     color: #1e2b37;
     border: 1px solid #d0ddee;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.skills-list li:active {
+    transform: scale(0.98);
+}
+
+body.dark-mode .skills-list li {
+    background: #3a3a3a;
+    border-color: #555;
+    color: #ddd;
 }
 
 /* Experience Page */
@@ -165,10 +436,26 @@ h1 {
     border: 1px solid #e6edf4;
 }
 
+body.dark-mode .experience-item {
+    background: #2a2a2a;
+    border-color: #444;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .experience-item h3 {
     font-size: 1.6rem;
     color: #1a3d5c;
     margin-bottom: 0.25rem;
+}
+
+body.dark-mode .experience-item h3 {
+    color: #c9e1f2;
 }
 
 .company {
@@ -177,19 +464,47 @@ h1 {
     font-size: 1.1rem;
 }
 
+body.dark-mode .company {
+    color: #8ab3cf;
+}
+
 .date {
     color: #5d707f;
     font-style: italic;
     margin-bottom: 1rem;
 }
 
-.experience-item ul {
-    padding-left: 1.5rem;
-    color: #2f4050;
+body.dark-mode .date {
+    color: #aaa;
 }
 
-.experience-item li {
-    margin-bottom: 0.5rem;
+.exp-details {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    max-height: 500px;
+}
+
+.exp-details.collapsed {
+    max-height: 0;
+    visibility: hidden;
+}
+
+.expand-btn {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.expand-btn:hover {
+    background: #e0e0e0;
+}
+
+body.dark-mode .expand-btn:hover {
+    background: #444;
 }
 
 /* Footer */
@@ -198,4 +513,35 @@ footer {
     margin-top: 3rem;
     color: #7b8b9a;
     font-size: 0.9rem;
+    position: relative;
+}
+
+body.dark-mode footer {
+    color: #888;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #2c5f8a;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background 0.2s;
+    z-index: 100;
+}
+
+.back-to-top:hover {
+    background: #1a3d5c;
+}
+
+body.dark-mode .back-to-top {
+    background: #3a6e9e;
 }

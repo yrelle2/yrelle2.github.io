@@ -8,51 +8,75 @@
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="experience.html">Work Experience</a>
-        </nav>
+        <div class="header-controls">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="experience.html">Work Experience</a>
+            </nav>
+            <div class="header-right">
+                <div id="greeting" class="greeting"></div>
+                <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">🌙</button>
+            </div>
+        </div>
     </header>
 
     <main>
         <h2>Work Experience (Fictional)</h2>
 
         <div class="experience-item">
-            <h3>Software Engineering Intern</h3>
+            <div class="exp-header">
+                <h3>Software Engineering Intern</h3>
+                <button class="expand-btn">▼</button>
+            </div>
             <p class="company">TechNova Solutions · Cebu City</p>
             <p class="date">Summer 2025</p>
-            <ul>
-                <li>Developed RESTful APIs for a library management dashboard using Java Spring Boot.</li>
-                <li>Collaborated with frontend team to integrate React components and improve UI responsiveness.</li>
-                <li>Participated in daily stand‑ups and sprint planning, delivering features ahead of schedule.</li>
-            </ul>
+            <div class="exp-details">
+                <ul>
+                    <li>Developed RESTful APIs for a library management dashboard using Java Spring Boot.</li>
+                    <li>Collaborated with frontend team to integrate React components and improve UI responsiveness.</li>
+                    <li>Participated in daily stand‑ups and sprint planning, delivering features ahead of schedule.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="experience-item">
-            <h3>Junior Developer (Part‑time)</h3>
+            <div class="exp-header">
+                <h3>Junior Developer (Part‑time)</h3>
+                <button class="expand-btn">▼</button>
+            </div>
             <p class="company">StartUpLabs · Remote</p>
             <p class="date">Jan 2024 – May 2025</p>
-            <ul>
-                <li>Built and maintained internal tools using Python and Flask, reducing manual data entry by 30%.</li>
-                <li>Assisted in debugging and optimizing SQL queries for a customer analytics platform.</li>
-                <li>Documented code and created user guides for non‑technical staff.</li>
-            </ul>
+            <div class="exp-details">
+                <ul>
+                    <li>Built and maintained internal tools using Python and Flask, reducing manual data entry by 30%.</li>
+                    <li>Assisted in debugging and optimizing SQL queries for a customer analytics platform.</li>
+                    <li>Documented code and created user guides for non‑technical staff.</li>
+                </ul>
+            </div>
         </div>
 
         <div class="experience-item">
-            <h3>Research Assistant (Hardware Lab)</h3>
+            <div class="exp-header">
+                <h3>Research Assistant (Hardware Lab)</h3>
+                <button class="expand-btn">▼</button>
+            </div>
             <p class="company">University of San Carlos · Talamban</p>
             <p class="date">Aug 2023 – Dec 2023</p>
-            <ul>
-                <li>Assisted in testing and verifying digital logic circuits for a 4‑bit divider project.</li>
-                <li>Simulated circuits using Logisim and documented timing diagrams.</li>
-                <li>Prepared lab materials and tutored sophomore students in basic electronics.</li>
-            </ul>
+            <div class="exp-details">
+                <ul>
+                    <li>Assisted in testing and verifying digital logic circuits for a 4‑bit divider project.</li>
+                    <li>Simulated circuits using Logisim and documented timing diagrams.</li>
+                    <li>Prepared lab materials and tutored sophomore students in basic electronics.</li>
+                </ul>
+            </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 Ellery Salas</p>
+        <p id="copyright"></p>
+        <button id="backToTop" class="back-to-top" title="Back to top">↑</button>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

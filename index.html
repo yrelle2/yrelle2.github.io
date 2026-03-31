@@ -8,10 +8,16 @@
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="experience.html">Work Experience</a>
-        </nav>
+        <div class="header-controls">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="experience.html">Work Experience</a>
+            </nav>
+            <div class="header-right">
+                <div id="greeting" class="greeting"></div>
+                <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">🌙</button>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -21,46 +27,73 @@
             <p class="subtitle">3rd Year Computer Engineering Student</p>
             <p class="gwa">GWA: 1.51 · University of San Carlos, Talamban, Cebu</p>
             <p class="status">No failing courses · Consistent Dean’s Lister</p>
+            <button id="contactBtn" class="contact-btn">📧 Contact Me</button>
+            <button id="printResume" class="print-btn">🖨️ Print Resume</button>
+        </div>
+
+        <div class="quote-section">
+            <div id="quoteDisplay" class="quote-box">"Code is like humor. When you have to explain it, it’s bad." – Cory House</div>
+            <button id="newQuoteBtn" class="quote-btn">✨ New Quote</button>
         </div>
 
         <section class="projects">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
+            <div class="projects-header">
+                <h2>Projects</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="java">Java</button>
+                    <button class="filter-btn" data-filter="hardware">Hardware</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                </div>
+            </div>
+            <div class="project-grid" id="projectGrid">
+                <div class="project-card" data-category="java">
                     <img src="carolinian-cupid.svg" alt="Carolinian Cupid" class="project-img">
                     <h3>Carolinian Cupid</h3>
                     <p>A JavaFX‑based study partner matchmaking app that helps students connect based on academic needs and interests. Clean, intuitive interface for effective collaboration.</p>
+                    <div class="project-actions">
+                        <button class="like-btn" data-project="carolinian">❤️ <span class="like-count">0</span></button>
+                    </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="web">
                     <img src="kaila-lms.svg" alt="KAILA Library Management System" class="project-img">
                     <h3>KAILA Library Management System</h3>
                     <p>Next‑gen web‑based LMS with real‑time book tracking, predictive search, and personalized recommendations. Dual portal for borrowers and librarians.</p>
+                    <div class="project-actions">
+                        <button class="like-btn" data-project="kaila">❤️ <span class="like-count">0</span></button>
+                    </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="hardware">
                     <img src="4bit-divider.svg" alt="4‑Bit Divider using Repeated Subtraction" class="project-img">
                     <h3>4‑Bit Divider using Repeated Subtraction</h3>
                     <p>Hardware implementation of a division algorithm using a 4‑bit full subtractor, JK flip‑flops, counters, and 7‑segment displays. Built with discrete logic ICs.</p>
+                    <div class="project-actions">
+                        <button class="like-btn" data-project="divider">❤️ <span class="like-count">0</span></button>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="skills">
             <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Typing 60 wpm</li>
-                <li>C++</li>
-                <li>Java</li>
-                <li>Python</li>
-                <li>HTML</li>
-                <li>Team player</li>
-                <li>Time management</li>
-                <li>Data analytics</li>
+            <ul class="skills-list" id="skillsList">
+                <li data-proficiency="95%">Typing 60 wpm</li>
+                <li data-proficiency="90%">C++</li>
+                <li data-proficiency="85%">Java</li>
+                <li data-proficiency="80%">Python</li>
+                <li data-proficiency="75%">HTML</li>
+                <li data-proficiency="90%">Team player</li>
+                <li data-proficiency="88%">Time management</li>
+                <li data-proficiency="70%">Data analytics</li>
             </ul>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Ellery Salas</p>
+        <p id="copyright"></p>
+        <button id="backToTop" class="back-to-top" title="Back to top">↑</button>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
